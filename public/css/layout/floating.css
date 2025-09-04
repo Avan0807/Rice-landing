@@ -1,0 +1,454 @@
+/* ==========================================
+   FLOATING BUTTONS - floating.css
+   ========================================== */
+
+/* Main Floating Buttons Container */
+.floating-buttons {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: none;
+}
+
+.floating-buttons > * {
+    pointer-events: all;
+}
+
+/* Base Button Styles */
+.floating-buttons .main-button,
+.floating-buttons .secondary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Zalo Button (Main) */
+.zalo-float {
+    background: linear-gradient(135deg, #0084ff 0%, #0066cc 100%);
+    width: 64px;
+    height: 64px;
+}
+
+.zalo-float:hover {
+    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 132, 255, 0.4);
+}
+
+.zalo-float:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Phone Button */
+.phone-float {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.phone-float:hover {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.4);
+}
+
+.phone-float:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(107, 114, 128, 0.4);
+}
+
+.back-to-top:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Button Text (Initially Hidden) */
+.button-text {
+    position: absolute;
+    right: 70px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.floating-buttons a:hover .button-text {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10000;
+    pointer-events: none;
+    animation: tooltipFadeIn 0.2s ease;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(0, 0, 0, 0.9);
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ==========================================
+   QUICK CONTACT POPUP
+   ========================================== */
+
+.quick-contact-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.quick-contact-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 420px;
+    max-height: 90vh;
+    overflow: hidden;
+}
+
+.popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+.popup-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.close-popup {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.close-popup:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.popup-body {
+    padding: 24px;
+}
+
+.popup-body p {
+    margin: 0 0 20px 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-option {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border: 2px solid #f3f4f6;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #374151;
+    transition: all 0.3s ease;
+}
+
+.contact-option:hover {
+    border-color: #f59e0b;
+    background: #fffbeb;
+    transform: translateY(-1px);
+}
+
+.option-icon {
+    font-size: 24px;
+    margin-right: 16px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9fafb;
+    border-radius: 50%;
+}
+
+.option-info {
+    flex: 1;
+}
+
+.option-info strong {
+    display: block;
+    color: #111827;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.option-info span {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+/* Specific Contact Option Colors */
+.zalo-option:hover {
+    border-color: #0084ff;
+    background: #eff6ff;
+}
+
+.zalo-option:hover .option-icon {
+    background: #dbeafe;
+}
+
+.phone-option:hover {
+    border-color: #22c55e;
+    background: #f0fdf4;
+}
+
+.phone-option:hover .option-icon {
+    background: #dcfce7;
+}
+
+.email-option:hover {
+    border-color: #8b5cf6;
+    background: #faf5ff;
+}
+
+.email-option:hover .option-icon {
+    background: #ede9fe;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .floating-buttons {
+        right: 16px;
+        bottom: 16px;
+    }
+
+    .zalo-float {
+        width: 56px;
+        height: 56px;
+    }
+
+    .floating-buttons .secondary-button {
+        width: 48px;
+        height: 48px;
+    }
+
+    .popup-content {
+        width: 95%;
+        margin: 20px;
+    }
+
+    .popup-header {
+        padding: 16px 20px;
+    }
+
+    .popup-body {
+        padding: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .floating-buttons {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .contact-option {
+        padding: 12px;
+    }
+
+    .option-icon {
+        font-size: 20px;
+        width: 36px;
+        height: 36px;
+        margin-right: 12px;
+    }
+
+    .button-text {
+        display: none;
+    }
+}
+
+/* ==========================================
+   ACCESSIBILITY & ANIMATIONS
+   ========================================== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .floating-buttons .main-button,
+    .floating-buttons .secondary-button,
+    .tooltip,
+    .quick-contact-popup,
+    .contact-option {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* Focus styles for accessibility */
+.floating-buttons .main-button:focus,
+.floating-buttons .secondary-button:focus,
+.close-popup:focus,
+.contact-option:focus {
+    outline: 2px solid #f59e0b;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .floating-buttons .main-button,
+    .floating-buttons .secondary-button {
+        border: 2px solid currentColor;
+    }
+
+    .tooltip,
+    .button-text {
+        border: 1px solid white;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .popup-content {
+        background: #1f2937;
+        color: #f9fafb;
+    }
+
+    .popup-body p {
+        color: #9ca3af;
+    }
+
+    .contact-option {
+        border-color: #374151;
+        color: #f9fafb;
+        background: #1f2937;
+    }
+
+    .contact-option:hover {
+        background: #374151;
+    }
+
+    .option-info strong {
+        color: #f9fafb;
+    }
+
+    .option-info span {
+        color: #9ca3af;
+    }
+
+    .option-icon {
+        background: #374151;
+    }
+}

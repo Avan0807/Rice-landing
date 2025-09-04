@@ -1,0 +1,1436 @@
+/* ==========================================
+   USAGE GUIDE SECTION - usage.css
+   ========================================== */
+
+.usage-guide.section {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Pattern */
+.usage-guide.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 80%, rgba(249, 158, 11, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.usage-guide .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.section-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: #6b7280;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   MAIN USAGE DISPLAY
+   ========================================== */
+
+.usage-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 6rem;
+    align-items: start;
+}
+
+/* Usage Visual Demo */
+.usage-visual {
+    position: sticky;
+    top: 2rem;
+}
+
+.preparation-demo {
+    background: white;
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(59, 130, 246, 0.2);
+}
+
+.demo-container {
+    position: relative;
+    height: 300px;
+    margin-bottom: 2rem;
+}
+
+.demo-step {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.demo-step.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.demo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Powder Demo */
+.powder-packet {
+    width: 120px;
+    height: 160px;
+    background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(249, 158, 11, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.packet-label {
+    font-size: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.powder-content {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.powder-content::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Liquid Demo */
+.liquid-container {
+    width: 100px;
+    height: 140px;
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    border-radius: 50px 50px 20px 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.liquid-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%);
+    border-radius: 0 0 20px 20px;
+    animation: fillUp 2s ease-in-out infinite;
+}
+
+.liquid-waves {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: wave 1.5s ease-in-out infinite;
+}
+
+/* Mixing Demo */
+.mixing-container {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.mixing-liquid {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    top: 20px;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    border-radius: 50%;
+    animation: swirl 1s linear infinite;
+}
+
+.mixer-spoon {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 60px;
+    background: #8b5cf6;
+    border-radius: 2px;
+    animation: stir 1s linear infinite;
+    transform-origin: center bottom;
+}
+
+/* Final Drink Demo */
+.final-drink {
+    width: 100px;
+    height: 120px;
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    border-radius: 50px 50px 20px 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.drink-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80%;
+    background: linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%);
+    border-radius: 0 0 20px 20px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.drink-foam {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    right: 10%;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: foam 3s ease-in-out infinite;
+}
+
+.demo-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1f2937;
+    text-align: center;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 0.75rem 1rem;
+    border-radius: 20px;
+    border: 2px solid rgba(59, 130, 246, 0.2);
+    min-width: 140px;
+}
+
+/* Demo Controls */
+.demo-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.demo-btn {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.demo-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.step-indicators {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #3b82f6;
+    transform: scale(1.2);
+}
+
+/* ==========================================
+   USAGE STEPS
+   ========================================== */
+
+.usage-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.step-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(59, 130, 246, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.step-card.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.step-card:hover,
+.step-card.active {
+    border-color: rgba(59, 130, 246, 0.4);
+    transform: translateX(0) translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    flex-shrink: 0;
+}
+
+.step-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.step-description {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.step-details h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+}
+
+.liquid-options,
+.mixing-tips,
+.timing-guide,
+.important-notes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.liquid-options li,
+.mixing-tips li,
+.timing-guide li,
+.important-notes li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 8px;
+    border-left: 3px solid #3b82f6;
+}
+
+.option-icon,
+.tip-icon,
+.time-icon,
+.warning-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   USAGE RECOMMENDATIONS
+   ========================================== */
+
+.usage-recommendations {
+    margin-bottom: 6rem;
+}
+
+.recommendations-title {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 3rem;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.recommendation-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(59, 130, 246, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.recommendation-card:hover,
+.recommendation-card.selected {
+    border-color: rgba(59, 130, 246, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.rec-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.rec-icon {
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border-radius: 50%;
+    border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.rec-title {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.rec-content {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.rec-content > div {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.rec-content strong {
+    color: #3b82f6;
+    font-weight: 600;
+    min-width: 80px;
+    font-size: 0.875rem;
+}
+
+.rec-content span {
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+/* Force 2x2 on ≥ 768px */
+.usage-recommendations .recommendations-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 2rem;
+  max-width: 1100px;       /* tuỳ chọn: căn lưới đẹp hơn */
+  margin: 0 auto;          /* căn giữa */
+}
+
+/* Mobile: 1 cột */
+@media (max-width: 767px){
+  .usage-recommendations .recommendations-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Đảm bảo các card cao đều nhau */
+.usage-recommendations .recommendation-card{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================
+   RECIPE VARIATIONS
+   ========================================== */
+
+.recipe-variations {
+    margin-bottom: 6rem;
+}
+
+.variations-title {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.variations-subtitle {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+}
+
+.recipes-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr)); /* 2 cột cố định */
+  gap: 2rem;
+  max-width: 1100px;      /* tuỳ chọn: gói gọn layout đẹp hơn */
+  margin: 0 auto;         /* canh giữa grid */
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(16, 185, 129, 0.1);
+    transition: all 0.3s ease;
+}
+
+.recipe-card:hover,
+.recipe-card.hovered {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.recipe-image {
+    height: 140px;
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.recipe-visual {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+/* Smoothie Visual */
+.smoothie-glass {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    border-radius: 50px 50px 15px 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.smoothie-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    background: linear-gradient(180deg, #f472b6 0%, #ec4899 100%);
+    border-radius: 0 0 15px 15px;
+}
+
+.smoothie-foam {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    right: 10%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+
+.garnish {
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    font-size: 1.25rem;
+}
+
+/* Porridge Visual */
+.porridge-bowl {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.porridge-content {
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    right: 15%;
+    top: 30%;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border-radius: 50%;
+}
+
+.toppings {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.25rem;
+}
+
+.topping {
+    font-size: 0.875rem;
+}
+
+/* Ice Cream Visual */
+.ice-cream-glass {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    border-radius: 15px 15px 50px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ice-cream-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(180deg, #ddd6fe 0%, #c4b5fd 100%);
+    border-radius: 0 0 50px 50px;
+}
+
+.whipped-cream {
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    right: 20%;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+/* Pancake Visual */
+.pancake-stack {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pancake {
+    width: 70px;
+    height: 12px;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    border-radius: 50px;
+    margin-bottom: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.syrup {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 30px;
+    background: linear-gradient(180deg, #92400e 0%, transparent 100%);
+    border-radius: 50%;
+}
+
+.berry {
+    position: absolute;
+    top: 20%;
+    right: 25%;
+    font-size: 0.875rem;
+}
+
+.recipe-info {
+    padding: 1.5rem;
+}
+
+.recipe-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.recipe-ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.ingredient {
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    color: #047857;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.recipe-description {
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+}
+/* Giới hạn bề rộng và canh giữa */
+.storage-instructions {
+  margin: 0 auto 6rem;              /* canh giữa khung */
+  max-width: 1100px;                /* giới hạn bề rộng để đỡ trống */
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,.08);
+  border: 2px solid rgba(249,158,11,.2);
+}
+
+/* Icon + nội dung dùng grid thay vì flex để chia cột gọn gàng */
+.storage-content {
+  display: grid;
+  grid-template-columns: auto 1fr;  /* cột 1: icon, cột 2: info */
+  align-items: start;
+  column-gap: 2rem;
+}
+
+/* Danh sách tip: 2 cột trên desktop */
+.storage-tips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* 2 cột */
+  gap: 1rem 1.25rem;
+}
+
+/* Thẻ tip phủ chiều ngang cột của nó */
+.tip-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, #fefbf3 0%, #fef7ed 100%);
+  border-radius: 12px;
+  border-left: 4px solid #f59e0b;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+
+.tip-icon { font-size: 1.5rem; flex-shrink: 0; }
+.tip-text  { color: #6b7280; font-weight: 500; }
+
+/* Tablet trở xuống: về 1 cột cho dễ đọc */
+@media (max-width: 900px) {
+  .storage-tips { grid-template-columns: 1fr; }
+}
+
+/* Mobile: thu nhỏ padding một chút */
+@media (max-width: 480px) {
+  .storage-instructions { padding: 2rem; }
+}
+
+
+/* ==========================================
+   FAQ SECTION
+   ========================================== */
+
+.usage-faq {
+    margin-bottom: 6rem;
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 3rem;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(59, 130, 246, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    cursor: pointer;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+}
+
+.question-text {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 1rem;
+}
+
+.toggle-icon {
+    width: 24px;
+    height: 24px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .toggle-icon {
+    transform: rotate(45deg);
+    background: #ef4444;
+}
+
+.faq-answer{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease, padding .3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.faq-answer p {
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ==========================================
+   EXPERT TIPS
+   ========================================== */
+
+.expert-tips {
+    margin-bottom: 6rem;
+    background: linear-gradient(135deg, #8b5c1eff 0%, #b9751cff 45%, #F59E0B 100%);
+    border-radius: 24px;
+    padding: 3rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.expert-tips::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(245,158,11,0.18) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+}
+
+.tips-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.expert-avatar {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid rgba(59, 130, 246, 0.3);
+}
+
+.expert-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.expert-title {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.tips-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.tip-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+}
+
+.tip-card .tip-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.tip-text h5 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.tip-text p {
+    color: #d1d5db;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ==========================================
+   FINAL CTA
+   ========================================== */
+
+.usage-cta {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border-radius: 24px;
+    padding: 3rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.usage-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: rotate 15s linear infinite;
+    pointer-events: none;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-description {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.cta-btn:hover::before {
+    left: 100%;
+}
+
+.cta-btn.primary {
+    background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+    color: white;
+    border: none;
+}
+
+.cta-btn.primary:hover {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(249, 158, 11, 0.4);
+    color: white;
+}
+
+.cta-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.btn-icon {
+    font-size: 1.25rem;
+}
+
+.cta-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.benefit-point {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.point-icon {
+    color: #10b981;
+    font-size: 1rem;
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+@keyframes fillUp {
+    0%, 30% { height: 0%; }
+    70%, 100% { height: 70%; }
+}
+
+@keyframes wave {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(1.1); }
+}
+
+@keyframes swirl {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes stir {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes foam {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .usage-guide.section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .usage-main {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .usage-visual {
+        position: static;
+    }
+
+    .preparation-demo {
+        padding: 2rem;
+    }
+
+    .demo-container {
+        height: 250px;
+    }
+
+    .recommendations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recipes-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .storage-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tips-content {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    .cta-benefits {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .usage-guide.section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .preparation-demo {
+        padding: 1.5rem;
+    }
+
+    .demo-container {
+        height: 200px;
+    }
+
+    .powder-packet {
+        width: 80px;
+        height: 100px;
+    }
+
+    .liquid-container,
+    .final-drink {
+        width: 70px;
+        height: 90px;
+    }
+
+    .mixing-container {
+        width: 70px;
+        height: 70px;
+    }
+
+    .demo-label {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        min-width: 100px;
+    }
+
+    .step-card {
+        padding: 1.5rem;
+    }
+
+    .step-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .step-title {
+        font-size: 1.125rem;
+    }
+
+    .recommendation-card {
+        padding: 1.5rem;
+    }
+
+    .rec-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+
+    .recipe-info {
+        padding: 1.25rem;
+    }
+
+    .recipe-image {
+        height: 120px;
+    }
+
+    .recipe-visual {
+        width: 60px;
+        height: 60px;
+    }
+
+    .storage-instructions {
+        padding: 2rem;
+    }
+
+    .expert-tips {
+        padding: 2rem;
+    }
+
+    .tips-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .expert-avatar {
+        font-size: 2rem;
+        width: 60px;
+        height: 60px;
+    }
+
+    .usage-cta {
+        padding: 2rem;
+    }
+
+    .cta-title {
+        font-size: 1.75rem;
+    }
+
+    .cta-description {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================
+   ACCESSIBILITY & PERFORMANCE
+   ========================================== */
+
+/* Focus styles */
+.demo-btn:focus,
+.indicator:focus,
+.step-card:focus,
+.recommendation-card:focus,
+.recipe-card:focus,
+.faq-question:focus,
+.cta-btn:focus {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+    .powder-packet,
+    .liquid-content,
+    .mixing-liquid,
+    .mixer-spoon,
+    .drink-content,
+    .drink-foam {
+        animation: none;
+    }
+
+    .expert-tips::before,
+    .usage-cta::before {
+        animation: none;
+    }
+
+    .demo-step,
+    .step-card,
+    .recommendation-card,
+    .recipe-card {
+        transition: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .preparation-demo,
+    .step-card,
+    .recommendation-card,
+    .recipe-card,
+    .faq-item {
+        border-width: 3px;
+        border-color: currentColor;
+    }
+
+    .demo-btn,
+    .step-number {
+        border: 2px solid white;
+    }
+}

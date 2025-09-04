@@ -1,0 +1,26 @@
+/* ========================================
+   Bột Gạo Lứt Tùng Beo - Main CSS
+   ======================================== */
+
+/* Base Styles */
+@import url('./base/variables.css');
+@import url('./base/reset.css');
+@import url('./base/utilities.css');
+
+/* Layout */
+@import url('./layout/header.css');
+@import url('./layout/footer.css');
+@import url('./layout/floating.css');
+
+/* Sections */
+@import url('./sections/hero.css');
+@import url('./sections/products.css');
+@import url('./sections/story.css');
+@import url('./sections/ingredients.css');
+@import url('./sections/benefits.css');
+@import url('./sections/usage.css');
+
+/* Components */
+@import url('./components/animations.css');
+@import url('./components/forms.css');
+@import url('./components/responsive.css');
