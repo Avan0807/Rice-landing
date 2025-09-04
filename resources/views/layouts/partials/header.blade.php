@@ -8,7 +8,7 @@
                 </div>
                 <div class="logo-text">
                     <div class="brand-name">TÙNG BEO</div>
-                    <div class="brand-tagline">GIAN HÀNG CHÍNH HÃNG</div>
+                    <div class="brand-tagline">BỘT GẠO LỨT</div>
                 </div>
             </div>
 
